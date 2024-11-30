@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.28.3)
 
-
 set(PATCH_VERSION "1" CACHE INTERNAL "PATCH_VERSION" )
 set(PROJECT_VERSION 0.0.${PATCH_VERSION})
-
 
 project(bayan VERSION ${PROJECT_VERSION} LANGUAGES C CXX)
 
@@ -12,6 +10,7 @@ find_package(
   Boost  REQUIRED  COMPONENTS 
              filesystem
              program_options
+             regex
              )
 
 
@@ -44,7 +43,8 @@ add_executable(bayan ${SRC_HEADER} ${SRC} main.cpp)
 target_link_libraries(
   bayan
   LINK_PUBLIC Boost::filesystem
-              Boost::program_options)
+              Boost::program_options
+              Boost::regex)
 
 link_directories(${Boost_LIBRARY_DIRS})
 
