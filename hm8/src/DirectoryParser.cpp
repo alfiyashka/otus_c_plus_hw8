@@ -72,16 +72,18 @@ void DirectoriesParser::readFile(const path& p, boost::container::vector<uint>& 
         cacheVector.push_back(hash);
     }
 
+    delete[] data;
+
     ifs.close();
 }
 
 boost::container::vector<uint>& DirectoriesParser::getHashes(const path& p)
 {
     const auto filename = p.string();
-    const auto founded = m_checksumsCache.find(filename);
-    if (founded != m_checksumsCache.end())
+    const auto found = m_checksumsCache.find(filename);
+    if (found != m_checksumsCache.end())
     {
-        return (*founded).second;
+        return (*found).second;
     }
     else
     {
@@ -205,7 +207,6 @@ int DirectoriesParser::collectFilesToParse()
             {
                 continue;
             }
-            const auto nn = iPath.string();
             m_filePathsToParse.emplace_back(iPath.string());
         }       
     }
