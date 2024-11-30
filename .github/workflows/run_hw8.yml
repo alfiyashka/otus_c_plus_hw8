@@ -22,7 +22,7 @@ jobs:
     - run: sudo apt install libboost-filesystem-dev
     - run: sudo apt install libboost-program-options-dev
     - run: sudo apt install libboost-regex-dev
-    - run: sudo apt install sudo apt install aptitude
+    - run: sudo apt install aptitude
     - run: aptitude search boost 
     - run: cmake ${{github.workspace}}/hm8 -DCMAKE_BUILD_TYPE="Release" -DPATCH_VERSION=${{ github.run_number }} 
     - run: cmake --build .
