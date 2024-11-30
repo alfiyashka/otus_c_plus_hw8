@@ -43,7 +43,8 @@ add_executable(bayan ${SRC_HEADER} ${SRC} main.cpp)
 target_link_libraries(
   bayan
   LINK_PUBLIC Boost::filesystem
-              Boost::program_options)
+              Boost::program_options
+              Boost::regex)
 
 link_directories(${Boost_LIBRARY_DIRS})
 
