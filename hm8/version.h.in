@@ -1,0 +1,6 @@
+#ifndef VERSION_H
+#define VERSION_H
+
+#define OTUS_HW8_VERSION "@bayan_VERSION@"
+
+#endif // VERSION_H
