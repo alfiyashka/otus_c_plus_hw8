@@ -38,5 +38,5 @@ jobs:
     - name: Upload build
       uses: actions/upload-artifact@v4 
       with:
-        name: homework7
-        path: /home/runner/work/otus_c_plus_hw7/otus_c_plus_hw7/
+        name: homework8
+        path: /home/runner/work/otus_c_plus_hw8/otus_c_plus_hw8/
